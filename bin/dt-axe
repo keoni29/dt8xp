@@ -41,4 +41,4 @@
 # > For more info read: https://git-scm.com/docs/gitattributes
 
 
-dt-8xp -xml "/usr/share/dt8xp/tokens/AxeTokens.xml" "$1"
+dt-8xp "$1" --lib axe
