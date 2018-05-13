@@ -8,7 +8,7 @@ setup(name='dt8xp',
       author_email='8by8mail@gmail.com',
       license='MIT',
       packages=['dt8xp'],
-      install_requires=['ti83f<=0.9', 'python-resources'],
+      install_requires=['ti83f<=0.9'],
       include_package_data=True,
       entry_points={
             'console_scripts': ['dt-8xp=dt8xp.dt8xp:main']},
