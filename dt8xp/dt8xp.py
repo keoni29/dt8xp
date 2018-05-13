@@ -67,16 +67,6 @@ def detokenize(data, xml_path):
     while i < len(data):
         i = _detokenize(root, data, i)
 
-def variables_from_file(filename):
-    """ Get variables from an appvar file """
-    with open(filename, 'rb') as fd:
-        raw = fd.read()
-
-    appv = ti83f.appvar_from_bytes(raw)
-    variables = ti83f.variables_from_bytes(appv.get_data())
-
-    return variables
-
 
 def get_user_args():
     """ Get user arguments using argparse.
@@ -125,7 +115,7 @@ def get_user_args():
 
 def main():
     args = get_user_args()
-    variables = variables_from_file(args.filename)
+    variables = ti83f.variables_from_file(args.filename)
     n = len(variables)
     if n == 0:
         print("Appvar does not contain variables.", file=sys.stderr)

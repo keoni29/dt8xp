@@ -28,6 +28,9 @@
 #
 # > >>> Using stand alone <<<
 # dt-axe FILE1 FILE2
+#
+# Specify a default diff tool. To override use: DIFF=diff dt-axe FILE1 FILE2
+default_diff="git diff"
 
 if [ "$1" == "" ] || [ "$2" == "" ];
 then
@@ -42,10 +45,14 @@ tmp_b=$(mktemp "/tmp/${file_b}.XXXXXX")
 exec 3>"$tmp_a"
 exec 4>"$tmp_b"
 
+if [ "$DIFF" == "" ]; then
+    DIFF="$default_diff"
+fi
+
 dt-axe $1 >&3
 dt-axe $2 >&4
 
-git diff $tmp_a $tmp_b
+$DIFF $tmp_a $tmp_b
 
 rm "$tmp_a"
 rm "$tmp_b"
