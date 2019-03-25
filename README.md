@@ -2,7 +2,7 @@
 Detokenize 8xp program files for ti8x calculators. Instructions for git integration are included in this readme.
 
 ## Dependencies
-**ti83f** : Python package for encoding and decoding TI83F files. https://bitbucket.org/keoni29/ti83f
+**ti83f** : Python package for encoding and decoding TI83F files. https://github.com/keoni29/ti83f
 
 ## Installing
 ```
